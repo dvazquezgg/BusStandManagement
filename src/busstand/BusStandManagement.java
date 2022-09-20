@@ -3,9 +3,11 @@ package busstand;
 /**
  * This class contains the details about the bus stand
  *
- * @author dvazquez
+<<<<<<< Updated upstream
+ * @author danteinpijamas
  *
  */
+
 public class BusStandManagement {
 
 
