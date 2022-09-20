@@ -2,6 +2,8 @@ package busstand;
 
 /**
  * This class contains the details about the bus stand
+ * @author MayaPapaya
+ * @author dvazquez
  *
 <<<<<<< Updated upstream
  * @author danteinpijamas
