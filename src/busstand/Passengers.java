@@ -136,10 +136,16 @@ public class Passengers {
         this.busId = busId;
     }
 
-    public Passengers (int passengerId, String passengerName. char passengerGender)
-
-        this.passengerId = idNumber;
-        this.passengerName = nameOfPassenger;
-        this.passengerGender = genderofPassenger;
+    /**
+     * Constructor for Passengers
+     * @param passengerId
+     * @param passengerName
+     * @param passengerGender
+     */
+    public Passengers (int passengerId, String passengerName, char passengerGender) {
+        this.passengerId = passengerId;
+        this.passengerName = passengerName;
+        this.passengerGender = passengerGender;
+    }
 
 }

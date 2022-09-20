@@ -7,6 +7,19 @@ package busstand;
 public class PrivateAgency extends TravelAgency {
 
     private int inchargeId;
-    private int inchargeContact;
+    private String inchargeContact;
 
+    public PrivateAgency(String agencyName, int totalBuses, int inchargeId, String inchargeContact) {
+        super(agencyName, totalBuses);
+        this.inchargeId = inchargeId;
+        this.inchargeContact = inchargeContact;
+    }
+
+    public int getInchargeId() {
+        return inchargeId;
+    }
+
+    public String getInchargeContact() {
+        return inchargeContact;
+    }
 }

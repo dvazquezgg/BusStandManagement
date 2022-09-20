@@ -14,4 +14,14 @@ public class VehicleParking extends Parking {
     private int StartTime;
     private int EndTime;
 
+    /**
+     * Constructor for Vehicle Parking
+     * @param NumberOfFreeBusSlots
+     * @param NumberOfFreeOtherSlots
+     * @param parkingId
+     */
+    public VehicleParking(int NumberOfFreeBusSlots, int NumberOfFreeOtherSlots, int parkingId) {
+        super(NumberOfFreeBusSlots, NumberOfFreeOtherSlots);
+        ParkingId = parkingId;
+    }
 }

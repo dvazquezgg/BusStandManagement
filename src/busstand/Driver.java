@@ -9,4 +9,15 @@ public class Driver extends Employee{
 
     // private int busId;
     private Bus busId;
+
+    /**
+     * Constructor for Driver
+     * @param employeeId
+     * @param employeeName
+     * @param busId
+     */
+    public Driver(int employeeId, String employeeName, Bus busId) {
+        super(employeeId, employeeName);
+        this.busId = busId;
+    }
 }

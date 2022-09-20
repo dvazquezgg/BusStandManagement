@@ -19,54 +19,59 @@ public class Ticket {
 
     /**
      * ticket details of a specific passenger can be viewed using this method
+     *
      * @return
      */
-    private String ticketDetails(){
+    private String ticketDetails() {
         return "";
     }
 
     /**
      * this method shows whether the passenger purchased and paid for the ticket
+     *
      * @return
      */
-    private boolean isPaid(){
+    private boolean isPaid() {
         return false;
     }
-}
+
 
     /**
      * Constructor for Ticket
+     *
      * @param ticketId
      * @param busId
      * @param passenger
      */
-    public Ticket (int ticketId, Bus busId, Passengers passenger){
-       this.ticketId = ticketId;
-       this.busId = busId;
-       this.passengerId = passenger;
+    public Ticket(int ticketId, Bus busId, Passengers passenger) {
+        this.ticketId = ticketId;
+        this.busId = busId;
+        this.passengerId = passenger;
     }
+
     /**
      * getter for ticket ID of each ticket
+     *
      * @return
      */
-    public int getTicketId(){
+    public int getTicketId() {
         return this.ticketId;
     }
 
-    public double setTicketPrice(int prices){
+    public void setTicketPrice(int prices) {
         this.ticketPrice = prices;
     }
 
-     public double getTicketPrice(){
+    public double getTicketPrice() {
         return ticketPrice;
-     }
+    }
 
     public Bus getBusId() {
         return this.busId;
     }
 
-    public Passengers getPassengerId(){
+    public Passengers getPassengerId() {
         return passengerId;
     }
 
-
+}
