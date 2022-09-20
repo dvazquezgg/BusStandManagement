@@ -24,4 +24,122 @@ public class Passengers {
         return "";
     }
 
+    /**
+     * Setter for passengerName
+     * @param passengerName
+     */
+    public void setPassengerName(String passengerName){
+        this.passengerName= passengerName;
+    }
+
+    /**
+     * Getter for passengerName
+     * @return
+     */
+    public String getPassengerName(){
+        return this.passengerName;
+    }
+
+    /**
+     * Getter for passengerId
+     * @return
+     */
+    public int getPassengerId() {
+        return passengerId;
+    }
+
+    /**
+     * Setter for passengerID
+     * @param passengerId
+     */
+    public void setPassengerId(int passengerId) {
+        this.passengerId = passengerId;
+    }
+
+    /**
+     * Getter for passengerAge
+     * @return
+     */
+    public int getPassengerAge() {
+        return passengerAge;
+    }
+
+    /**
+     * Setter for passengerID
+     * @param passengerAge
+     */
+    public void setPassengerAge(int passengerAge) {
+        this.passengerAge = passengerAge;
+    }
+
+    /**
+     * Getter for passengerGender
+     * @return
+     */
+    public char getPassengerGender() {
+        return passengerGender;
+    }
+
+    /**
+     * Setter for passengerGender
+     * @param passengerGender
+     */
+    public void setPassengerGender(char passengerGender) {
+        this.passengerGender = passengerGender;
+    }
+
+    /**
+     * Getter for getSource
+     * @return
+     */
+    public String getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for setSource
+     * @param source
+     */
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    /**
+     * Getter for getDestination
+     * @return
+     */
+    public String getDestination() {
+        return destination;
+    }
+
+    /**
+     * Setter for setDestination
+     * @param destination
+     */
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    /**
+     * Getter for busId
+     * @return
+     */
+    public Bus getBusId() {
+        return busId;
+    }
+
+    /**
+     * Setter for busID
+     * @param busId
+     */
+    public void setBusId(Bus busId) {
+        this.busId = busId;
+    }
+
+    public Passengers (int passengerId, String passengerName. char passengerGender)
+
+        this.passengerId = idNumber;
+        this.passengerName = nameOfPassenger;
+        this.passengerGender = genderofPassenger;
+
 }
