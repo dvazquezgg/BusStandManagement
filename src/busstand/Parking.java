@@ -3,6 +3,7 @@ package busstand;
 /**
  * Mostly all bus stand will have a parking space alongside. This class gives us the details of the parking lot,
  * the information about the vehicles and the owner of the vehicles.
+ * @author danteinpijamas
  */
 public class Parking {
 
