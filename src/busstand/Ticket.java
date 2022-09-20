@@ -3,6 +3,7 @@ package busstand;
 /**
  * This holds the information about the ticket booked for travelling. It would contain the passenger
  * details and the bus along with the timing of the travel.
+ * @author val
  */
 public class Ticket {
 
