@@ -13,19 +13,19 @@ public class Employee {
     private double employeeSalary;
 
     /**
-     * Setter for employee ID
-     * @param iD
+     * Getter for employee ID
+     * @return
      */
-    public void setEmployeeId(int iD){
-        this.employeeId = iD;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
     /**
-     * Setter for employee name
-     * @param name
+     * Getter for employee name
+     * @return
      */
-    public void setEmployeeName(String name){
-        this.employeeName = name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
     /**
