@@ -13,7 +13,8 @@ public class Passengers {
     private char passengerGender;
     private String source;
     private String destination;
-    private int busId;
+    // private int busId;
+    private Bus busId;
 
     /**
      * this method is to get the details of a specific passenger

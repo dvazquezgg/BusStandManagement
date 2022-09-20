@@ -8,14 +8,20 @@ public class Bus {
 
     private int busId;
     private String busType;
-    private int driverId;
-    private int conductorId;
+    //private int driverId;
+    //private int conductorId;
     private int totalSeats;
     private int seatsFilled;
     private String source;
     private String destination;
     private double ticketPrice;
     private int slotId;
+
+    private Passengers[] passengers;
+    private Ticket[] tickets;
+    private Driver driverId;
+    private Conductor conductorId;
+
 
     /**
      * this method gives information abount an specific bus

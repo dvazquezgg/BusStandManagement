@@ -7,9 +7,13 @@ package busstand;
 public class Ticket {
 
     private int ticketId;
-    private int busId;
-    private int passengerId;
+    //private int busId;
+    //private int passengerId;
+
     private double ticketPrice;
+
+    private Bus busId;
+    private Passengers passengerId;
 
     /**
      * ticket details of a specific passenger can be viewed using this method

@@ -7,5 +7,6 @@ package busstand;
  */
 public class Driver extends Employee{
 
-    private int busId;
+    // private int busId;
+    private Bus busId;
 }
