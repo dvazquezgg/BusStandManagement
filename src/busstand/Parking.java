@@ -9,13 +9,13 @@ public class Parking {
 
     private int noOfFreeBusSlots;
     private int noOfFreeOtherSlots;
-}
 
 
-public void setNoOfFreeBusSlots (int busSlots) {
-    this.noOfFreeBusSlots = busSlots
 
-}
+    public void setNoOfFreeBusSlots (int busSlots) {
+        this.noOfFreeBusSlots = busSlots;
+
+    }
 
     /**
      * setter for number of bus slots
@@ -24,7 +24,7 @@ public void setNoOfFreeBusSlots (int busSlots) {
 
 
     public int getNoOfFreeBusSlots () {
-        return this.noOfFreeBusSlots
+        return this.noOfFreeBusSlots;
 
 }
     /**
@@ -34,7 +34,7 @@ public void setNoOfFreeBusSlots (int busSlots) {
 
 
     public void setNoOfFreeOtherSlots (int otherSlots) {
-        this.noOfFreeOtherSlots = otherSlots
+        this.noOfFreeOtherSlots = otherSlots;
     }
 
     /**
@@ -43,7 +43,7 @@ public void setNoOfFreeBusSlots (int busSlots) {
      */
 
     public int getNoOfFreeOtherSlots () {
-        return this.noOfFreeOtherSlots
+        return this.noOfFreeOtherSlots;
     }
 
     /**
@@ -51,10 +51,10 @@ public void setNoOfFreeBusSlots (int busSlots) {
      *
      */
 
-    public Parking(int NumberOfFreeBusSlots,int NumberOfFreeOtherSlots)
-        this.noOfFreeBusSlots =  NumberOfFreeBusSlots;
+    public Parking(int NumberOfFreeBusSlots,int NumberOfFreeOtherSlots) {
+        this.noOfFreeBusSlots = NumberOfFreeBusSlots;
         this.noOfFreeOtherSlots = NumberOfFreeOtherSlots;
-
+    }
 
     /**
      * This method is to park the vehicle
@@ -62,7 +62,8 @@ public void setNoOfFreeBusSlots (int busSlots) {
     public void parkVehicle(){
 
     }
-public Parking()
+
+
     /**
      * Pay method is to pay the fees for parking
      */
