@@ -1,0 +1,20 @@
+Index: src/busstand/BusStandManagement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/busstand/BusStandManagement.java	(revision d8aefc396fc40dd3d80081c1d2b5ab63334ac8a1)
++++ src/busstand/BusStandManagement.java	(date 1663682113382)
+@@ -3,9 +3,11 @@
+ /**
+  * This class contains the details about the bus stand
+  *
+- * @author dvazquez
++<<<<<<< Updated upstream
++ * @author danteinpijamas
+  *
+  */
++
+ public class BusStandManagement {
+ 
+ 
