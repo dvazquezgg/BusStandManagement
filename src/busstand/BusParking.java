@@ -24,4 +24,20 @@ public class BusParking extends Parking{
         this.slotId = slotId;
         this.placeName = placeName;
     }
+
+    public int getSlotId() {
+        return slotId;
+    }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public int getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public int getDepartureTime() {
+        return departureTime;
+    }
 }
