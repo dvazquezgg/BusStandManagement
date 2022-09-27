@@ -13,6 +13,8 @@ package busstand;
 
 import util.IBIO;
 
+import static java.lang.System.exit;
+
 public class BusStandManagement {
 
 
@@ -22,6 +24,7 @@ public class BusStandManagement {
     private boolean open;
 
     // Arrays for Parking, Shop and Agencies
+    private static BusStandManagement[] busStandManagement;
     private Parking[] parkings;
     private Shops[] shops;
     private TravelAgency[] agencies;
@@ -96,40 +99,111 @@ public class BusStandManagement {
         this.open = open;
     }
 
-    public static void main(String[] args){
-        IBIO.output("Welcome to the BusStandManagement Program");
-
-        String busStandName = "Naucalpan Station";
-        String city = "Mexico City";
-        String area = "North";
-        // Calling the Constructor for the BusStandManagement
-        BusStandManagement busStandMgt = new BusStandManagement(busStandName, city, area);
-        BusStandManagement busStandMgtA = new BusStandManagement("Tlalpan station", city, "South");
-
-        IBIO.output(busStandMgt.isOpen());
-        IBIO.output(busStandMgtA.isOpen());
-
-        busStandMgt.setOpen(true);
-        IBIO.output("Is the " + busStandMgt.getBusStandName() + " open?" + busStandMgt.isOpen());
-
+    public static BusStandManagement createBusStand(String name, String city, String area){
+        BusStandManagement busStandMgt = new BusStandManagement(name, city, area);
         BusParking busParking = new BusParking(15,2,1, "Main Parking");
         VehicleParking vehicleParking = new VehicleParking(0,30,2);
         busStandMgt.addParking(busParking);
         busStandMgt.addParking(vehicleParking);
-        busStandMgt.printParking();
 
-        IBIO.output(busStandMgt.parkings[0].getNoOfFreeBusSlots());
-        // Casting the first parking to BusParking
-        BusParking tempParking = (BusParking) busStandMgt.parkings[0];
-        IBIO.output(tempParking.getPlaceName());
+        return busStandMgt;
+    }
 
-        // private methods or properties can not be called
-        // IBIO.output(tempParking.noOfFreeBusSlots);
+    public static void initStations(){
 
-        //Non-static fields can not be called
-        // parkings[1];
+        busStandManagement = new BusStandManagement[3];
+        busStandManagement[0] = createBusStand("Naucalpan Station", "Mexico City", "North");
+        busStandManagement[1] = createBusStand("Tlalpan Station", "Mexico City", "South");
+        busStandManagement[2] = createBusStand("Iztacalco Station", "Mexico City", "East");
 
     }
+
+    public static int menu(String[] options){
+
+        IBIO.output("Select an option from the menu:");
+        for(int count = 0; count < options.length; count++){
+            IBIO.output((count + 1) + " " + options[count]);
+        }
+        int selection = IBIO.inputInt("Choice:");
+        return selection;
+    }
+
+    public static void parkBus(){
+        IBIO.output("Parking bus");
+    }
+
+    private static String pickOption(String prompt, String[] options){
+        IBIO.output(prompt);
+        for(int count = 0; count < options.length; count++){
+            IBIO.output((count + 1) + " " + options[count]);
+        }
+        int selection = IBIO.inputInt("Choice:");
+        return options[selection - 1];
+    }
+
+
+    private static int pickTime(String prompt, int[] slots){
+        IBIO.output(prompt);
+        for(int count = 0; count < slots.length; count++){
+            int hr = slots[count] / 100;
+            int min = slots[count] % 100;
+            IBIO.output( String.format("%2d %02d:%02d",(count + 1),hr,min));
+        }
+        int selection = IBIO.inputInt("Choice:");
+        return slots[selection - 1];
+
+    }
+    public static void assignBus(){
+        final int[] timeSlots = {815,900,945,1030,
+                                1115,1200,1245,1330,
+                                1415,1500,1545,1630,
+                                1715,1800,1845,1930};
+        final String[] locations = {"North", "South", "East"};
+        IBIO.output("Assign bus");
+
+        String origin = pickOption("Select origin for the bus", locations);
+        String destination  = pickOption("Select destination for the bus", locations);
+        int timeSlot = pickTime("Select time to departure",timeSlots);
+        IBIO.output("Select Driver for the bus");
+        IBIO.output("Select Conductor for the bus");
+
+
+
+    }
+
+    public static void sellTicket(){
+        IBIO.output("Sell Ticket");
+    }
+    public static void main(String[] args) {
+        initStations();
+
+        IBIO.output("Welcome to the BusStandManagement Program");
+        final String[] MENU_OPTIONS = {
+                    "Parking a Bus",
+                    "Assign Bus to a route and time slot",
+                    "Sell a Ticket"};
+
+
+        int option = menu(MENU_OPTIONS);
+        switch (option){
+            case 1:
+                parkBus();
+                break;
+            case 2:
+                assignBus();
+                break;
+            case 3:
+                sellTicket();
+                break;
+            default:
+                IBIO.output("Not a valid option. Finishing the program");
+                exit(0);
+                break;
+        }
+
+    }
+
+
 
 
 }
