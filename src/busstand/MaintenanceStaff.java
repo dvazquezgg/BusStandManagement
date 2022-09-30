@@ -8,7 +8,7 @@ public class MaintenanceStaff extends Employee {
 
     private String department;
 
-    public MaintenanceStaff(int employeeId, String employeeName, String department) {
+    public MaintenanceStaff(String employeeId, String employeeName, String department) {
         super(employeeId, employeeName);
         this.department = department;
     }

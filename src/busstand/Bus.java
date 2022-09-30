@@ -1,5 +1,9 @@
 package busstand;
 
+import util.NameGenerator;
+
+import java.util.Hashtable;
+
 /**
  * This class gives us the details of the bus in the bus stand,
  * it helps us to get a ticket to that bus and get information about the seats.
@@ -209,5 +213,29 @@ public class Bus {
     }
 
 
+    private static final int MAX_BUSES = 20;
+    private static final Hashtable<String, Integer> busTypes = new Hashtable<String, Integer>(){{
+        put("Minibus",20);
+        put("Fulldeck",40);
+        put("DoubleDecker",60);
+    }};
+
+    private static int busCount = 0;
+    public static Bus[] builder(int quantity){
+        Bus[] buses = new Bus[MAX_BUSES];
+
+        for(int count = 0; count < quantity; count++){
+            int busId = NameGenerator.randomNumericIdentifier();
+            String busType = "DoubleDecker";
+            int totalSeats = busTypes.get(busType);
+
+            Bus aBus = new Bus(busId,busType);
+            aBus.setTotalSeats(totalSeats);
+
+            buses[busCount] = aBus;
+            busCount++;
+        }
+        return buses;
+    }
 
 }

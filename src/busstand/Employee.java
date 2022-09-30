@@ -1,5 +1,7 @@
 package busstand;
 
+import util.NameGenerator;
+
 /**
  *  This class gives us the details of all the employees working for the bus stand including retailers,
  *  support staff, etc. This class is the parent class of
@@ -7,7 +9,7 @@ package busstand;
  */
 public class Employee {
 
-    private int employeeId;
+    private String employeeId;
     private String employeeName;
     private String employeeDesignation;
     private double employeeSalary;
@@ -16,7 +18,7 @@ public class Employee {
      * Getter for employee ID
      * @return
      */
-    public int getEmployeeId() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
@@ -65,7 +67,7 @@ public class Employee {
      * @param employeeId
      * @param employeeName
      */
-    public Employee(int employeeId, String employeeName){
+    public Employee(String employeeId, String employeeName){
         this.employeeId = employeeId;
         this.employeeName = employeeName;
     }
@@ -76,5 +78,50 @@ public class Employee {
      */
     public String employeeDetails(){
         return "";
+    }
+
+
+    private static final int MAX_EMPLOYEE = 50;
+
+    private static int conductorCount = 0;
+    private static int driverCount = 0;
+
+    public static int getConductorCount() {
+        return conductorCount;
+    }
+
+    public static int getDriverCount() {
+        return driverCount;
+    }
+
+    private static int employeeCount = 0;
+
+    public static Employee[] builder(){
+        Employee[] employees = new Employee[MAX_EMPLOYEE];
+        createDrivers(10, employees);
+        createConductors(10, employees);
+        return employees;
+    }
+
+    private static void createDrivers(int quantity, Employee[] employees){
+        String[] driverNames = NameGenerator.getNames(quantity);
+        for(int count = 0; count < quantity; count++){
+            employees[employeeCount] = new Driver(NameGenerator.randomIdentifier(), driverNames[count]);
+            employees[employeeCount].setEmployeeDesignation("Driver");
+            employeeCount ++;
+            driverCount++;
+        }
+    }
+
+    private static void createConductors(int quantity, Employee[] employees){
+        String[] conductorNames = NameGenerator.getNames(quantity);
+        for(int count = 0; count < quantity; count++){
+            employees[employeeCount] = new Conductor(NameGenerator.randomIdentifier(), conductorNames[count]);
+            employees[employeeCount].setEmployeeDesignation("Conductor");
+            employeeCount ++;
+            conductorCount++;
+
+        }
+
     }
 }
