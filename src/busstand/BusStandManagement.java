@@ -166,8 +166,6 @@ public class BusStandManagement {
         IBIO.output("Select Driver for the bus");
         IBIO.output("Select Conductor for the bus");
 
-
-
     }
 
     public static void sellTicket(){
@@ -184,7 +182,6 @@ public class BusStandManagement {
                 "Parking a Bus",
                 "Assign Bus to a route and time slot",
                 "Sell a Ticket"};
-
 
         int option = menu(MENU_OPTIONS);
         switch (option){
